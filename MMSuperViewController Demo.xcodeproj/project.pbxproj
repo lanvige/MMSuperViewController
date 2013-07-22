@@ -30,7 +30,7 @@
 		3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */; };
 		3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */; };
 		3892E85F179CDEDE00887E60 /* NullDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85E179CDEDE00887E60 /* NullDemoViewController.m */; };
-		3892E861179CE52C00887E60 /* MMSuperVewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3892E860179CE52C00887E60 /* MMSuperVewController.bundle */; };
+		3892E863179D00E200887E60 /* MMSuperViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3892E862179D00E200887E60 /* MMSuperViewController.bundle */; };
 		38CFFB98179C2C380011BCEF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38CFFB96179C2C380011BCEF /* icon.png */; };
 		38CFFB99179C2C380011BCEF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38CFFB97179C2C380011BCEF /* icon@2x.png */; };
 		38CFFB9C179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */; };
@@ -78,7 +78,7 @@
 		3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreDemoTableViewController.m; sourceTree = "<group>"; };
 		3892E85D179CDEDE00887E60 /* NullDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullDemoViewController.h; sourceTree = "<group>"; };
 		3892E85E179CDEDE00887E60 /* NullDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullDemoViewController.m; sourceTree = "<group>"; };
-		3892E860179CE52C00887E60 /* MMSuperVewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MMSuperVewController.bundle; sourceTree = "<group>"; };
+		3892E862179D00E200887E60 /* MMSuperViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MMSuperViewController.bundle; sourceTree = "<group>"; };
 		38CFFB96179C2C380011BCEF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		38CFFB97179C2C380011BCEF /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		38CFFB9A179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLoadMoreDemoTableViewController.h; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		3843A6D5179C2B0D00D3E3FB /* MMSuperViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3892E860179CE52C00887E60 /* MMSuperVewController.bundle */,
+				3892E862179D00E200887E60 /* MMSuperViewController.bundle */,
 				3843A6F4179C2B5000D3E3FB /* Category */,
 				3843A6F3179C2B3500D3E3FB /* Default Views */,
 				3843A6F2179C2B1300D3E3FB /* Placeholder */,
@@ -277,8 +277,8 @@
 			files = (
 				3843A6BD179C2AA000D3E3FB /* InfoPlist.strings in Resources */,
 				3843A6C5179C2AA000D3E3FB /* Default.png in Resources */,
-				3892E861179CE52C00887E60 /* MMSuperVewController.bundle in Resources */,
 				3843A6C7179C2AA000D3E3FB /* Default@2x.png in Resources */,
+				3892E863179D00E200887E60 /* MMSuperViewController.bundle in Resources */,
 				3843A6C9179C2AA000D3E3FB /* Default-568h@2x.png in Resources */,
 				38CFFB98179C2C380011BCEF /* icon.png in Resources */,
 				38CFFB99179C2C380011BCEF /* icon@2x.png in Resources */,

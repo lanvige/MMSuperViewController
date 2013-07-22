@@ -89,7 +89,7 @@
     if (!_logoView) {
         _logoView = [[UIView alloc] initWithFrame:CGRectMake(0, -110, 320, 42)];
         _logoView.backgroundColor = [UIColor clearColor];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MMSuperVewController.bundle/mms_list_header_logo.png"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MMSuperViewController.bundle/mms_list_header_logo.png"]];
         imageView.frame = CGRectMake(130, 0, 60, 42);
         [_logoView addSubview:imageView];
     }

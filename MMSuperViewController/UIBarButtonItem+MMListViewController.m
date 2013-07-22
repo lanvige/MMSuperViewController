@@ -14,9 +14,9 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0.0, 0.0, 40.0, 27.0);
-    [button setImage:[UIImage imageNamed:@"MMSuperVewController.bundle/mms_nav_refresh.png"]
+    [button setImage:[UIImage imageNamed:@"MMSuperViewController.bundle/mms_nav_refresh.png"]
             forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"MMSuperVewController.bundle/mms_nav_refresh.png"]
+    [button setImage:[UIImage imageNamed:@"MMSuperViewController.bundle/mms_nav_refresh.png"]
             forState:UIControlStateHighlighted];
     [button addTarget:target
                action:aAction

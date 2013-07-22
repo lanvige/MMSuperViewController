@@ -70,7 +70,7 @@
         _arrowImage = [CALayer layer];
 		_arrowImage.frame = CGRectMake(25.0f, self.frame.size.height - 65.0f, 30.0f, 55.0f);
 		_arrowImage.contentsGravity = kCAGravityResizeAspect;
-		_arrowImage.contents = (id)[UIImage imageNamed:@"MMSuperVewController.bundle/mms_refresh_arrow_gray.png"].CGImage;
+		_arrowImage.contents = (id)[UIImage imageNamed:@"MMSuperViewController.bundle/mms_refresh_arrow_gray.png"].CGImage;
 		
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {

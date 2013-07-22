@@ -1,28 +1,27 @@
 //
-//  MMFullTableViewController.m
+//  LoadMoreDemoTableViewController.m
 //  MMSuperViewController Demo
 //
-//  Created by Lanvige Jiang on 7/21/13.
+//  Created by Lanvige Jiang on 7/22/13.
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMFullTableViewController.h"
+#import "LoadMoreDemoTableViewController.h"
 #import "MMListEmptyView.h"
 #import "MMLoadingView.h"
 
-@interface MMFullTableViewController ()
+@interface LoadMoreDemoTableViewController ()
 
-@property (nonatomic, strong) MMRefreshDefaultView *refreshHeaderView1;
 @property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreFooterView1;
 @property (nonatomic, strong) NSArray *listData;
 @end
 
+@implementation LoadMoreDemoTableViewController
 
-@implementation MMFullTableViewController
-
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if (self = [super initWithListType:MMListRefreshAndLoadMore]) {
+    
+    if (self = [super initWithListType:MMListLoadMoreOnly]) {
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyView alloc] initWithFrame:CGRectZero];
@@ -35,11 +34,11 @@
     return self;
 }
 
+
 - (void)loadView
 {
     [super loadView];
     
-    self.refreshHeaderView = self.refreshHeaderView1;
     self.loadMoreFooterView = self.loadMoreFooterView1;
     [self.view addSubview:self.tableView];
 }
@@ -47,8 +46,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.title = @"Refresh&More";
+    
+    self.title = @"Load More";
 }
 
 
@@ -124,26 +123,13 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                     reuseIdentifier:kCellIdentifier];
+                                      reuseIdentifier:kCellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     }
     
     return cell;
-}
-
-
-
-- (MMRefreshDefaultView *)refreshHeaderView1
-{
-    if (!_refreshHeaderView1) {
-		_refreshHeaderView1 = [[MMRefreshDefaultView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-        _refreshHeaderView1.backgroundColor = [UIColor clearColor];
-        [_refreshHeaderView1 updateLastUpdatedDate];
-	}
-    
-    return _refreshHeaderView1;
 }
 
 - (MMLoadMoreDefaultView *)loadMoreFooterView1
@@ -154,6 +140,8 @@
     
     return _loadMoreFooterView1;
 }
+
+
 
 
 

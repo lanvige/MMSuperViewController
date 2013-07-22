@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMListViewController.h"
+#import "MMSuperListViewController.h"
 
-@interface MMFullTableViewController : MMListViewController
+@interface RefreshLoadMoreDemoTableViewController : MMSuperListViewController
 
 @end

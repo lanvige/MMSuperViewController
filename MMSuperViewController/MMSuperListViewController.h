@@ -13,12 +13,12 @@ typedef enum{
     MMListNone
 } MMListTableType;
 
-#import "MMViewController.h"
+#import "MMSuperViewController.h"
 #import "MMRefreshDefaultView.h"
 #import "MMListLoadState.h"
 #import "MMLoadMoreDefaultView.h"
 
-@interface MMListViewController : MMViewController <
+@interface MMSuperListViewController : MMSuperViewController <
     UITableViewDataSource,
     UITableViewDelegate,
     LoadMoreTableFooterDelegate

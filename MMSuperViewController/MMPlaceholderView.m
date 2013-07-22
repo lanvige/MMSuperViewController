@@ -42,7 +42,7 @@
 		_arrowLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
 		_arrowLabel.textAlignment = UITextAlignmentCenter;
 		_arrowLabel.backgroundColor = [UIColor clearColor];
-		_arrowLabel.font = [UIFont fontWithName:@"Noteworthy" size:19.0f];
+		_arrowLabel.font = [UIFont systemFontOfSize:19.0f];
 		_arrowLabel.textColor = [UIColor colorWithWhite:0.294f alpha:0.45f];
     }
     

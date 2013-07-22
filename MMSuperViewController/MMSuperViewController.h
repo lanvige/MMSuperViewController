@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMViewController : UIViewController
+@interface MMSuperViewController : UIViewController
 
 @property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
 @property (nonatomic, strong) UIView *placeholderView;

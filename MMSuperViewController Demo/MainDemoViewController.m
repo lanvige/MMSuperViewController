@@ -6,15 +6,18 @@
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "MMFullTableViewController.h"
+#import "MainDemoViewController.h"
+#import "RefreshLoadMoreDemoTableViewController.h"
+#import "RefreshDemoTableViewController.h"
+#import "LoadMoreDemoTableViewController.h"
+#import "NullDemoViewController.h"
 
-@interface ViewController ()
+@interface MainDemoViewController ()
 
-@property (nonatomic, strong) MMListViewController *listViewController;
+@property (nonatomic, strong) MMSuperListViewController *listViewController;
 @end
 
-@implementation ViewController
+@implementation MainDemoViewController
 
 
 - (void)viewDidLoad
@@ -82,7 +85,22 @@
 {
     switch (indexPath.row) {
         case 0: {
-            self.listViewController = [[MMFullTableViewController alloc] init];
+            self.listViewController = [[RefreshLoadMoreDemoTableViewController alloc] init];
+            [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 1: {
+            self.listViewController = [[RefreshDemoTableViewController alloc] init];
+            [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 2: {
+            self.listViewController = [[LoadMoreDemoTableViewController alloc] init];
+            [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 3: {
+            self.listViewController = [[NullDemoViewController alloc] init];
             [self.navigationController pushViewController:self.listViewController animated:YES];
             break;
         }

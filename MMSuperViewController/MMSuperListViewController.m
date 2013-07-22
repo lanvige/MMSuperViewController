@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMListViewController.h"
+#import "MMSuperListViewController.h"
 
-@interface MMListViewController ()
+@interface MMSuperListViewController ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreNullView;
 @property (nonatomic, assign) MMListTableType listType;
 @end
 
 
-@implementation MMListViewController
+@implementation MMSuperListViewController
 
 #pragma mark -
 #pragma mark NSObject

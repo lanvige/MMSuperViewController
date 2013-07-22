@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMViewController.h"
+#import "MMSuperViewController.h"
 
-@interface MMViewController ()
+@interface MMSuperViewController ()
 
 @end
 
 
-@implementation MMViewController
+@implementation MMSuperViewController
 
 #pragma mark - NSObject
 

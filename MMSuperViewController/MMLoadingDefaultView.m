@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMLoadingView.h"
+#import "MMLoadingDefaultView.h"
 
 static CGFloat interiorPadding = 20.0f;
 static CGFloat indicatorSize = 20.0f;
 static CGFloat indicatorRightMargin = 8.0f;
 
-@interface MMLoadingView ()
+@interface MMLoadingDefaultView ()
 - (void)_initialize;
 @end
 
-@implementation MMLoadingView
+@implementation MMLoadingDefaultView
 
 - (id)initWithFrame:(CGRect)frame
 {

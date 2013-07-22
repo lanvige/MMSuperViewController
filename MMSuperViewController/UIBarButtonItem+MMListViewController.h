@@ -12,7 +12,6 @@
 
 @interface UIBarButtonItem (MMListViewController)
 
-+ (UIBarButtonItem *)exAddButtonItemWithTarget:(id)target action:(SEL)action;
 + (UIBarButtonItem *)exRefreshButtonItemWithTarget:(id)target action:(SEL)aAction;
 + (UIBarButtonItem *)exActivityIndicatorButtonItem;
 

@@ -7,8 +7,8 @@
 //
 
 #import "RefreshLoadMoreDemoTableViewController.h"
-#import "MMListEmptyView.h"
-#import "MMLoadingView.h"
+#import "MMListEmptyDefaultView.h"
+#import "MMLoadingDefaultView.h"
 
 @interface RefreshLoadMoreDemoTableViewController ()
 
@@ -25,8 +25,8 @@
     if (self = [super initWithListType:MMListRefreshAndLoadMore]) {
         self.view.backgroundColor = [UIColor whiteColor];
         
-        self.placeholderView = [[MMListEmptyView alloc] initWithFrame:CGRectZero];
-        self.loadingView = [[MMLoadingView alloc] initWithFrame:CGRectZero];
+        self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
         
         
         self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];

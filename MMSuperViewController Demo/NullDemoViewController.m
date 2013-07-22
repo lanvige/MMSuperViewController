@@ -7,8 +7,8 @@
 //
 
 #import "NullDemoViewController.h"
-#import "MMListEmptyView.h"
-#import "MMLoadingView.h"
+#import "MMListEmptyDefaultView.h"
+#import "MMLoadingDefaultView.h"
 
 
 @interface NullDemoViewController ()
@@ -25,8 +25,8 @@
     if (self = [super initWithListType:MMListRefreshAndLoadMore]) {
         self.view.backgroundColor = [UIColor whiteColor];
         
-        self.placeholderView = [[MMListEmptyView alloc] initWithFrame:CGRectZero];
-        self.loadingView = [[MMLoadingView alloc] initWithFrame:CGRectZero];
+        self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
         
         
         self.listData = @[];

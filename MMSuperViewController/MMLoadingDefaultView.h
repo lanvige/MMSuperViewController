@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMLoadingView : UIView
+@interface MMLoadingDefaultView : UIView
 
 @property (nonatomic, strong, readonly) UILabel *textLabel;
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityIndicatorView;

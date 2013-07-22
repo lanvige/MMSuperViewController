@@ -7,8 +7,8 @@
 //
 
 #import "LoadMoreDemoTableViewController.h"
-#import "MMListEmptyView.h"
-#import "MMLoadingView.h"
+#import "MMListEmptyDefaultView.h"
+#import "MMLoadingDefaultView.h"
 
 @interface LoadMoreDemoTableViewController ()
 
@@ -24,8 +24,8 @@
     if (self = [super initWithListType:MMListLoadMoreOnly]) {
         self.view.backgroundColor = [UIColor whiteColor];
         
-        self.placeholderView = [[MMListEmptyView alloc] initWithFrame:CGRectZero];
-        self.loadingView = [[MMLoadingView alloc] initWithFrame:CGRectZero];
+        self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
         
         
         self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];
@@ -67,7 +67,6 @@
 - (void)refresh
 {
     [super refresh];
-    self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exActivityIndicatorButtonItem];
     
     [self performSelector:@selector(refreshCompleted)
                withObject:nil

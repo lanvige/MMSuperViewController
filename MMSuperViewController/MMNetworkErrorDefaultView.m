@@ -1,14 +1,14 @@
 //
-//  EXListEmptyView.m
+//  EXErrorView.m
 //  Explorer
 //
 //  Created by Lanvige Jiang on 6/28/13.
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "MMListEmptyView.h"
+#import "MMNetworkErrorDefaultView.h"
 
-@implementation MMListEmptyView
+@implementation MMNetworkErrorDefaultView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -16,12 +16,11 @@
         self.backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.f];
 		self.userInteractionEnabled = NO;
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		self.iconImageView.image = [UIImage imageNamed:@"list_empty_icon"];
-		self.titleLabel.text = @"You don't have any lists.";
+		self.iconImageView.image = [UIImage imageNamed:@"MMSuperVewController.bundle/mms_error_icon.png"];
+		self.titleLabel.text = @"Network not available.";
 	}
     
 	return self;
 }
-
 
 @end

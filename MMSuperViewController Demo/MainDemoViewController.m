@@ -10,6 +10,7 @@
 #import "RefreshLoadMoreDemoTableViewController.h"
 #import "RefreshDemoTableViewController.h"
 #import "LoadMoreDemoTableViewController.h"
+#import "RefreshLogoDemoTableViewController.h"
 #import "NullDemoViewController.h"
 
 @interface MainDemoViewController ()
@@ -35,7 +36,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,6 +66,10 @@
             break;
         }
         case 3: {
+            cell.textLabel.text = @"Refresh Logo";
+            break;
+        }
+        case 4: {
             cell.textLabel.text = @"Null Data";
             break;
         }
@@ -100,6 +105,11 @@
             break;
         }
         case 3: {
+            self.listViewController = [[RefreshLogoDemoTableViewController alloc] init];
+            [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 4: {
             self.listViewController = [[NullDemoViewController alloc] init];
             [self.navigationController pushViewController:self.listViewController animated:YES];
             break;

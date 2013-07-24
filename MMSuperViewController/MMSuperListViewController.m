@@ -77,24 +77,9 @@
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView addSubview:self.logoView];
     }
     
     return _tableView;
-}
-
-- (UIView *)logoView
-{
-    // Add a logo view on head of tableview.
-    if (!_logoView) {
-        _logoView = [[UIView alloc] initWithFrame:CGRectMake(0, -110, 320, 42)];
-        _logoView.backgroundColor = [UIColor clearColor];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MMSuperViewController.bundle/mms_list_header_logo.png"]];
-        imageView.frame = CGRectMake(130, 0, 60, 42);
-        [_logoView addSubview:imageView];
-    }
-    
-    return _logoView;
 }
 
 - (MMLoadMoreDefaultView *)loadMoreNullView

@@ -13,6 +13,7 @@
 @protocol MMRefreshHeaderDelegate;
 
 @interface MMRefreshDefaultView : UIView
+
 @property (nonatomic, strong) UILabel *lastUpdatedLabel;
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) CALayer *arrowImage;

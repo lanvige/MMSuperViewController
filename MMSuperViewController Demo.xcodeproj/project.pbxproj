@@ -27,6 +27,8 @@
 		3843A6F0179C2B0D00D3E3FB /* MMSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3843A6E6179C2B0D00D3E3FB /* MMSuperViewController.m */; };
 		3843A6F1179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3843A6E8179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m */; };
 		3843A6F6179C2B7500D3E3FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3843A6F5179C2B7500D3E3FB /* QuartzCore.framework */; };
+		384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */; };
+		384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */; };
 		3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */; };
 		3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */; };
 		3892E85F179CDEDE00887E60 /* NullDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85E179CDEDE00887E60 /* NullDemoViewController.m */; };
@@ -72,6 +74,10 @@
 		3843A6E7179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+MMListViewController.h"; sourceTree = "<group>"; };
 		3843A6E8179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+MMListViewController.m"; sourceTree = "<group>"; };
 		3843A6F5179C2B7500D3E3FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		384C0FCA179F88FA008DBB39 /* MMRefreshLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRefreshLogoView.h; sourceTree = "<group>"; };
+		384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRefreshLogoView.m; sourceTree = "<group>"; };
+		384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLogoDemoTableViewController.h; sourceTree = "<group>"; };
+		384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshLogoDemoTableViewController.m; sourceTree = "<group>"; };
 		3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshDemoTableViewController.h; sourceTree = "<group>"; };
 		3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshDemoTableViewController.m; sourceTree = "<group>"; };
 		3892E85A179CDDF500887E60 /* LoadMoreDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreDemoTableViewController.h; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 				3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */,
 				3892E85D179CDEDE00887E60 /* NullDemoViewController.h */,
 				3892E85E179CDEDE00887E60 /* NullDemoViewController.m */,
+				384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */,
+				384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */,
 			);
 			path = "MMSuperViewController Demo";
 			sourceTree = "<group>";
@@ -202,6 +210,8 @@
 				3843A6DE179C2B0D00D3E3FB /* MMLoadMoreDefaultView.m */,
 				3843A6E3179C2B0D00D3E3FB /* MMRefreshDefaultView.h */,
 				3843A6E4179C2B0D00D3E3FB /* MMRefreshDefaultView.m */,
+				384C0FCA179F88FA008DBB39 /* MMRefreshLogoView.h */,
+				384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */,
 			);
 			name = "Default Views";
 			sourceTree = "<group>";
@@ -305,9 +315,11 @@
 				3843A6EF179C2B0D00D3E3FB /* MMRefreshDefaultView.m in Sources */,
 				3843A6F0179C2B0D00D3E3FB /* MMSuperViewController.m in Sources */,
 				3843A6F1179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m in Sources */,
+				384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */,
 				3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */,
 				38CFFB9C179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m in Sources */,
 				3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */,
+				384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

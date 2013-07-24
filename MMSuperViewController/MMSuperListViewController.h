@@ -31,7 +31,6 @@ typedef enum{
 @property (nonatomic, assign, getter = isDragging) BOOL dragging;
 @property (nonatomic, assign, getter = isLoadingMore) BOOL loadingMore;
 @property (nonatomic, assign) MMListLoadState state;
-@property (nonatomic, strong) UIView *logoView;
 
 
 - (id)initWithListType:(MMListTableType)listType;

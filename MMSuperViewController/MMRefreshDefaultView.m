@@ -19,7 +19,7 @@
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor clearColor];
-        
+    
         [self addSubview:self.lastUpdatedLabel];
 		[self addSubview:self.statusLabel];
 		[self.layer addSublayer:self.arrowImage];
@@ -33,6 +33,7 @@
 
 #pragma mark -
 #pragma mark UIView init
+
 
 - (UILabel *)lastUpdatedLabel
 {

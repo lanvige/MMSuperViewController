@@ -289,6 +289,8 @@
     } else {
         [self setState:MMLoadMoreNormal];
     }
+    
+    [self updatePlaceholderViews:YES];
 }
 
 

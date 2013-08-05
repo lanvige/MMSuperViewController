@@ -27,7 +27,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
-        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:self.view.bounds];
     }
     
     return self;
@@ -73,7 +73,6 @@
 {
     self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];
     [self.tableView reloadData];
-    
     [super loadCompletedWithAnimated:NO];
 }
 
@@ -119,12 +118,12 @@
                                       reuseIdentifier:kCellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.listData[indexPath.row]];
     
     return cell;
 }
-
 
 
 - (MMRefreshDefaultView *)refreshHeaderView1

@@ -16,7 +16,6 @@
 
 - (NSPredicate *)predicate;
 
-- (void)setLoading:(BOOL)loading animated:(BOOL)animated;
 - (BOOL)empty;
 - (void)updatePlaceholderViews:(BOOL)animated;
 - (void)showLoadingView:(BOOL)animated;

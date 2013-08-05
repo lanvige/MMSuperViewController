@@ -90,14 +90,9 @@
     }
 }
 
-- (void)setLoading:(BOOL)loading animated:(BOOL)animated
-{
-    return;
-}
-
 - (void)showLoadingView:(BOOL)animated
 {
-	if (!self.loadingView || self.loadingView.superview) {
+	if (!self.loadingView) {
 		return;
 	}
     
@@ -107,6 +102,7 @@
     
 	void (^change)(void) = ^{
 		self.loadingView.alpha = 1.0f;
+        self.loadingView.userInteractionEnabled = NO;
 	};
     
     
@@ -125,6 +121,7 @@
     
 	void (^change)(void) = ^{
 		self.loadingView.alpha = 0.0f;
+        self.loadingView.userInteractionEnabled = YES;
 	};
 	
 	void (^completion)(BOOL finished) = ^(BOOL finished) {
@@ -132,7 +129,11 @@
 	};
 	
 	if (animated) {
-		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:change completion:completion];
+		[UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:change
+                         completion:completion];
 	} else {
 		change();
 		completion(YES);
@@ -177,7 +178,11 @@
 	};
 	
 	if (animated) {
-		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:change completion:completion];
+		[UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:change
+                         completion:completion];
 	} else {
 		change();
 		completion(YES);

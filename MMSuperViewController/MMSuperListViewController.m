@@ -50,10 +50,11 @@
     
     [self.view addSubview:self.tableView];
     
-	//  update the last update date
-    if (self.listType == MMListRefreshAndLoadMore || self.listType || MMListRefreshOnly) {
-        [_refreshHeaderView updateLastUpdatedDate];
-    }
+//	//  update the last update date
+//    if (self.listType == MMListRefreshAndLoadMore ||
+//        self.listType == MMListRefreshOnly) {
+//        [_refreshHeaderView updateLastUpdatedDate];
+//    }
 }
 
 - (void)viewDidLoad
@@ -202,6 +203,9 @@
 	}
 }
 
+#pragma mark -
+#pragma mark Setters
+
 - (void)setState:(MMListLoadState)state
 {
 	switch (state) {
@@ -237,6 +241,34 @@
     
 	_state = state;
 }
+
+
+- (void)updatePlaceholderViews:(BOOL)animated
+{
+	// There is no content to be displayed.
+	if (self.refreshing) {
+		// Show the loading view and hide the no content view
+		[self hidePlaceholderView:animated];
+        
+        if (self.empty) {
+            [self showLoadingView:animated];
+        }
+	} else if (self.empty){
+		// Show the no content view and hide the loading view
+		[self hideLoadingView:animated];
+        [self hideLoadMoreView:animated];
+		[self showPlaceholderView:animated];
+	} else {
+        [self hideLoadingView:animated];
+		[self hidePlaceholderView:animated];
+        
+        if (self.listType == MMListRefreshAndLoadMore ||
+            self.listType == MMListLoadMoreOnly) {
+            [self showLoadMoreView:animated];
+        }
+    }
+}
+
 
 #pragma mark -
 #pragma mark Internal Methods (Refresh)
@@ -331,94 +363,16 @@
 #pragma mark -
 #pragma mark Override superclass methods
 
-- (void)setLoading:(BOOL)loading animated:(BOOL)animated
+- (void)showLoadMoreView:(BOOL)animated
 {
-    [super setLoading:loading animated:animated];
-    
-//    if (self.refreshing) {
-//        [self refresh];
-//    } else {
-//        [self refreshCompleted];
-//    }
+    self.tableView.tableFooterView = self.loadMoreFooterView;
 }
-
-- (void)showLoadingView:(BOOL)animated
-{
-    if (!self.loadingView || self.loadingView.superview) {
-        return;
-    }
-    
-    self.loadingView.alpha = 0.0f;
-    self.loadingView.frame = self.view.bounds;
-    
-    [self.tableView addSubview:self.loadingView];
-    
-    void (^change)(void) = ^{ self.loadingView.alpha = 1.0f; };
-    
-    if (animated) {
-        [UIView animateWithDuration:.3f
-                              delay:0.f
-                            options:UIViewAnimationOptionAllowUserInteraction
-                         animations:change
-                         completion:nil];
-    } else {
-        change();
-    }
-}
-
-- (void)showPlaceholderView:(BOOL)animated
-{
-    if (!self.placeholderView || self.placeholderView.superview) {
-        return;
-    }
-    
-    self.placeholderView.alpha = 0.0f;
-    self.placeholderView.frame = self.view.bounds;
-    [self.tableView addSubview:self.placeholderView];
-    
-    void (^change)(void) = ^{ self.placeholderView.alpha = 1.f; };
-    
-    if (animated) {
-        [UIView animateWithDuration:.3f delay:0.f options:UIViewAnimationOptionAllowUserInteraction animations:change completion:nil];
-    } else {
-        change();
-    }
-}
-
 
 - (void)hideLoadMoreView:(BOOL)animated
 {
     self.tableView.tableFooterView = self.loadMoreNullView;
 }
 
-- (void)showLoadMoreView:(BOOL)animated
-{
-    self.tableView.tableFooterView = self.loadMoreFooterView;
-}
-
-- (void)updatePlaceholderViews:(BOOL)animated
-{
-	// There is no content to be displayed.
-	if ([self isRefreshing]) {
-		// Show the loading view and hide the no content view
-		[self hidePlaceholderView:animated];
-        
-        if ([self empty]) {
-            [self showLoadingView:animated];
-        }
-	} else if ([self empty]){
-		// Show the no content view and hide the loading view
-		[self hideLoadingView:animated];
-        [self hideLoadMoreView:animated];
-		[self showPlaceholderView:animated];
-	} else {
-        [self hideLoadingView:animated];
-		[self hidePlaceholderView:animated];
-        if (self.listType == MMListRefreshAndLoadMore || self.listType == MMListLoadMoreOnly) {
-            [self showLoadMoreView:animated];
-        }
-    }
-}
 
 #pragma mark -
 #pragma mark Momery Management

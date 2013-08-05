@@ -222,18 +222,18 @@
 		3890F54B17AFABA00013530C /* Demo Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				38CFFB9A179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.h */,
-				38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */,
-				3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */,
-				3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */,
+				3890F54C17AFABBD0013530C /* LoadingOnlyViewController.h */,
+				3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */,
 				3892E85A179CDDF500887E60 /* LoadMoreDemoTableViewController.h */,
 				3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */,
 				3892E85D179CDEDE00887E60 /* NullDemoViewController.h */,
 				3892E85E179CDEDE00887E60 /* NullDemoViewController.m */,
+				3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */,
+				3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */,
+				38CFFB9A179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.h */,
+				38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */,
 				384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */,
 				384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */,
-				3890F54C17AFABBD0013530C /* LoadingOnlyViewController.h */,
-				3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */,
 			);
 			name = "Demo Controllers";
 			sourceTree = "<group>";

@@ -75,7 +75,7 @@
 	// There is no content to be displayed.
 	if ([self isRefreshing]) {
 		// Show the loading view and hide the no content view
-		[self hideEmptyView:animated];
+		[self hidePlaceholderView:animated];
         
         if ([self empty]) {
             [self showLoadingView:animated];
@@ -83,10 +83,10 @@
 	} else if ([self empty]){
 		// Show the no content view and hide the loading view
 		[self hideLoadingView:animated];
-		[self showEmptyView:animated];
+		[self showPlaceholderView:animated];
 	} else {
         [self hideLoadingView:animated];
-		[self hideEmptyView:animated];
+		[self hidePlaceholderView:animated];
     }
 }
 
@@ -140,7 +140,7 @@
 }
 
 
-- (void)showEmptyView:(BOOL)animated
+- (void)showPlaceholderView:(BOOL)animated
 {
 	if (!self.placeholderView || self.placeholderView.superview) {
 		return;
@@ -162,7 +162,7 @@
 }
 
 
-- (void)hideEmptyView:(BOOL)animated
+- (void)hidePlaceholderView:(BOOL)animated
 {
 	if (!self.placeholderView || !self.placeholderView.superview) {
 		return;

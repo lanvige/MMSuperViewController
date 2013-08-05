@@ -9,9 +9,14 @@
 #import "MMSuperListViewController.h"
 
 @interface MMSuperListViewController ()
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreNullView;
 @property (nonatomic, assign) MMListTableType listType;
+
+- (void)hideLoadMoreView:(BOOL)animated;
+- (void)showLoadMoreView:(BOOL)animated;
+
 @end
 
 
@@ -249,6 +254,10 @@
     [self refresh];
 }
 
+
+#pragma mark -
+#pragma mark Refresh
+
 - (void)refresh
 {
     // TODO: add override warning]
@@ -258,7 +267,7 @@
     return;
 }
 
-- (void)refreshCompleted
+- (void)refreshCompletedWithAnimated:(BOOL)animated
 {
     self.refreshing = NO;
     
@@ -269,11 +278,32 @@
                      }];
 	
 	[self setState:MMRefreshNormal];
+    
+    [self updatePlaceholderViews:animated];
 }
 
 #pragma mark -
+#pragma mark Load
+
+- (void)load
+{
+    self.refreshing = YES;
+    [self setState:MMRefreshLoading];
+    
+    return;
+}
+
+- (void)loadCompletedWithAnimated:(BOOL)animated
+{
+    self.refreshing = NO;
+    [self setState:MMRefreshNormal];
+    
+    [self updatePlaceholderViews:animated];
+}
+
+
+#pragma mark -
 #pragma mark Internal Methods (Load More)
-#pragma mark LoadMoreFootDelegate Methods
 
 - (void)loadMore
 {
@@ -284,7 +314,7 @@
     return;
 }
 
-- (void)loadMoreCompleted
+- (void)loadMoreCompletedWithAnimated:(BOOL)animated
 {
     self.loadingMore = NO;
     // 判断是否全部加载完成。
@@ -294,7 +324,7 @@
         [self setState:MMLoadMoreNormal];
     }
     
-    [self updatePlaceholderViews:YES];
+    [self updatePlaceholderViews:animated];
 }
 
 
@@ -320,24 +350,27 @@
     
     self.loadingView.alpha = 0.0f;
     self.loadingView.frame = self.view.bounds;
+    
     [self.tableView addSubview:self.loadingView];
     
     void (^change)(void) = ^{ self.loadingView.alpha = 1.0f; };
     
     if (animated) {
-        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:
-            change completion:nil];
+        [UIView animateWithDuration:.3f
+                              delay:0.f
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:change
+                         completion:nil];
     } else {
         change();
     }
 }
 
-- (void)showEmptyView:(BOOL)animated
+- (void)showPlaceholderView:(BOOL)animated
 {
-    // FIXME: 
-//    if (!self.emptyView || !self.emptyView.superview) {
-//        return;
-//    }
+    if (!self.placeholderView || self.placeholderView.superview) {
+        return;
+    }
     
     self.placeholderView.alpha = 0.0f;
     self.placeholderView.frame = self.view.bounds;
@@ -365,12 +398,10 @@
 
 - (void)updatePlaceholderViews:(BOOL)animated
 {
-	animated = NO;
-    
 	// There is no content to be displayed.
 	if ([self isRefreshing]) {
 		// Show the loading view and hide the no content view
-		[self hideEmptyView:animated];
+		[self hidePlaceholderView:animated];
         
         if ([self empty]) {
             [self showLoadingView:animated];
@@ -379,10 +410,10 @@
 		// Show the no content view and hide the loading view
 		[self hideLoadingView:animated];
         [self hideLoadMoreView:animated];
-		[self showEmptyView:animated];
+		[self showPlaceholderView:animated];
 	} else {
         [self hideLoadingView:animated];
-		[self hideEmptyView:animated];
+		[self hidePlaceholderView:animated];
         if (self.listType == MMListRefreshAndLoadMore || self.listType == MMListLoadMoreOnly) {
             [self showLoadMoreView:animated];
         }

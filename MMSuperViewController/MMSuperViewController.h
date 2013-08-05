@@ -21,7 +21,7 @@
 - (void)updatePlaceholderViews:(BOOL)animated;
 - (void)showLoadingView:(BOOL)animated;
 - (void)hideLoadingView:(BOOL)animated;
-- (void)showEmptyView:(BOOL)animated;
-- (void)hideEmptyView:(BOOL)animated;
+- (void)showPlaceholderView:(BOOL)animated;
+- (void)hidePlaceholderView:(BOOL)animated;
 
 @end

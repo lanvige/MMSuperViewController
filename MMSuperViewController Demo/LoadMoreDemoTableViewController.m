@@ -76,7 +76,7 @@
 
 - (void)refreshCompleted
 {
-    [super refreshCompleted];
+    [super refreshCompletedWithAnimated:NO];
     
     self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exRefreshButtonItemWithTarget:self action:@selector(refreshData:)];
 }
@@ -87,7 +87,7 @@
     [super loadMore];
     
     self.allLoadFinished = YES;
-    [self performSelector:@selector(loadMoreCompleted)
+    [self performSelector:@selector(loadMoreCompletedWithAnimated:)
                withObject:nil
                afterDelay:1.0];
     return;

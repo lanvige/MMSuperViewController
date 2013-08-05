@@ -12,6 +12,8 @@
 #import "LoadMoreDemoTableViewController.h"
 #import "RefreshLogoDemoTableViewController.h"
 #import "NullDemoViewController.h"
+#import "LoadingOnlyViewController.h"
+
 
 @interface MainDemoViewController ()
 
@@ -36,7 +38,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,6 +74,9 @@
         case 4: {
             cell.textLabel.text = @"Null Data";
             break;
+        }
+        case 5: {
+            cell.textLabel.text = @"Loading";
         }
         default:
             break;
@@ -111,6 +116,11 @@
         }
         case 4: {
             self.listViewController = [[NullDemoViewController alloc] init];
+            [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 5:{
+            self.listViewController = [[LoadingOnlyViewController alloc] init];
             [self.navigationController pushViewController:self.listViewController animated:YES];
             break;
         }

@@ -29,6 +29,7 @@
 		3843A6F6179C2B7500D3E3FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3843A6F5179C2B7500D3E3FB /* QuartzCore.framework */; };
 		384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */; };
 		384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */; };
+		3890F54E17AFABBD0013530C /* LoadingOnlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */; };
 		3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */; };
 		3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */; };
 		3892E85F179CDEDE00887E60 /* NullDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892E85E179CDEDE00887E60 /* NullDemoViewController.m */; };
@@ -78,6 +79,8 @@
 		384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRefreshLogoView.m; sourceTree = "<group>"; };
 		384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLogoDemoTableViewController.h; sourceTree = "<group>"; };
 		384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshLogoDemoTableViewController.m; sourceTree = "<group>"; };
+		3890F54C17AFABBD0013530C /* LoadingOnlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingOnlyViewController.h; sourceTree = "<group>"; };
+		3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingOnlyViewController.m; sourceTree = "<group>"; };
 		3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshDemoTableViewController.h; sourceTree = "<group>"; };
 		3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshDemoTableViewController.m; sourceTree = "<group>"; };
 		3892E85A179CDDF500887E60 /* LoadMoreDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreDemoTableViewController.h; sourceTree = "<group>"; };
@@ -139,21 +142,12 @@
 		3843A6B8179C2AA000D3E3FB /* MMSuperViewController Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3890F54B17AFABA00013530C /* Demo Controllers */,
 				3843A6C1179C2AA000D3E3FB /* AppDelegate.h */,
 				3843A6C2179C2AA000D3E3FB /* AppDelegate.m */,
 				3843A6CA179C2AA000D3E3FB /* MainDemoViewController.h */,
 				3843A6CB179C2AA000D3E3FB /* MainDemoViewController.m */,
 				3843A6B9179C2AA000D3E3FB /* Supporting Files */,
-				38CFFB9A179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.h */,
-				38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */,
-				3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */,
-				3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */,
-				3892E85A179CDDF500887E60 /* LoadMoreDemoTableViewController.h */,
-				3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */,
-				3892E85D179CDEDE00887E60 /* NullDemoViewController.h */,
-				3892E85E179CDEDE00887E60 /* NullDemoViewController.m */,
-				384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */,
-				384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */,
 			);
 			path = "MMSuperViewController Demo";
 			sourceTree = "<group>";
@@ -223,6 +217,25 @@
 				3843A6E8179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		3890F54B17AFABA00013530C /* Demo Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38CFFB9A179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.h */,
+				38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */,
+				3892E857179CD47500887E60 /* RefreshDemoTableViewController.h */,
+				3892E858179CD47500887E60 /* RefreshDemoTableViewController.m */,
+				3892E85A179CDDF500887E60 /* LoadMoreDemoTableViewController.h */,
+				3892E85B179CDDF500887E60 /* LoadMoreDemoTableViewController.m */,
+				3892E85D179CDEDE00887E60 /* NullDemoViewController.h */,
+				3892E85E179CDEDE00887E60 /* NullDemoViewController.m */,
+				384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */,
+				384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */,
+				3890F54C17AFABBD0013530C /* LoadingOnlyViewController.h */,
+				3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */,
+			);
+			name = "Demo Controllers";
 			sourceTree = "<group>";
 		};
 		38CFFB95179C2C380011BCEF /* Resources */ = {
@@ -317,6 +330,7 @@
 				3843A6F1179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m in Sources */,
 				384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */,
 				3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */,
+				3890F54E17AFABBD0013530C /* LoadingOnlyViewController.m in Sources */,
 				38CFFB9C179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m in Sources */,
 				3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */,
 				384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */,

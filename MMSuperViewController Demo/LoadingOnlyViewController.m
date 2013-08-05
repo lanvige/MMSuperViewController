@@ -1,34 +1,33 @@
 //
-//  MMRefreshTableViewController.m
+//  LoadingOnlyViewController.m
 //  MMSuperViewController Demo
 //
-//  Created by Lanvige Jiang on 7/22/13.
+//  Created by Lanvige Jiang on 8/5/13.
 //  Copyright (c) 2013 Lanvige Jiang. All rights reserved.
 //
 
-#import "RefreshDemoTableViewController.h"
+#import "LoadingOnlyViewController.h"
 #import "MMListEmptyDefaultView.h"
 #import "MMLoadingDefaultView.h"
 
 
-@interface RefreshDemoTableViewController ()
+@interface LoadingOnlyViewController ()
 
 @property (nonatomic, strong) MMRefreshDefaultView *refreshHeaderView1;
+@property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreFooterView1;
 @property (nonatomic, strong) NSArray *listData;
+
 @end
 
-@implementation RefreshDemoTableViewController
+@implementation LoadingOnlyViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    if (self = [super initWithListType:MMListRefreshOnly]) {
+    if (self = [super initWithListType:MMListRefreshAndLoadMore]) {
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
         self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
-        
-        
-        self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];
     }
     
     return self;
@@ -39,15 +38,17 @@
     [super loadView];
     
     self.refreshHeaderView = self.refreshHeaderView1;
-
-    [self.view addSubview:self.tableView];
+    self.loadMoreFooterView = self.loadMoreFooterView1;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"Refresh only";
+    self.listData = @[];
+    self.title = @"Refresh&More";
+    
+    [self load];
 }
 
 
@@ -59,29 +60,22 @@
     return self.listData.count == 0;
 }
 
-- (IBAction)refreshData:(id)sender
+- (void)load
 {
-    [self forceRefresh];
-}
-
-- (void)refresh
-{
-    [super refresh];
-    self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exActivityIndicatorButtonItem];
+    [super load];
     
-    [self performSelector:@selector(refreshCompleted)
+    [self performSelector:@selector(loadCompleted)
                withObject:nil
-               afterDelay:1.0];
-    return;
+               afterDelay:2.f];
 }
 
-- (void)refreshCompleted
+- (void)loadCompleted
 {
-    [super refreshCompletedWithAnimated:NO];
+    self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];
+    [self.tableView reloadData];
     
-    self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exRefreshButtonItemWithTarget:self action:@selector(refreshData:)];
+    [super loadCompletedWithAnimated:NO];
 }
-
 
 - (void)loadMore
 {
@@ -93,7 +87,6 @@
                afterDelay:1.0];
     return;
 }
-
 
 #pragma mark -
 #pragma mark - UITableViewDelegate
@@ -118,8 +111,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *kCellIdentifier = @"noticesCellIndentifier";
-    //    NSString *kCellIdentifier = [NSString stringWithFormat:@"cell_%d", indexPath.row];
+    static NSString *const kCellIdentifier = @"loadingCellIndentifier";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     
     if (cell == nil) {
@@ -146,6 +138,15 @@
     return _refreshHeaderView1;
 }
 
+- (MMLoadMoreDefaultView *)loadMoreFooterView1
+{
+    if (!_loadMoreFooterView1) {
+		_loadMoreFooterView1 = [[MMLoadMoreDefaultView alloc] init];
+	}
+    
+    return _loadMoreFooterView1;
+}
+
 
 
 - (void)didReceiveMemoryWarning
@@ -153,5 +154,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

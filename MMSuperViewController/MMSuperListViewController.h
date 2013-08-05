@@ -38,12 +38,14 @@ typedef enum{
 #pragma mark - PullToRefresh
 - (void)refresh;
 - (void)forceRefresh;
-- (void)refreshCompleted;
+- (void)refreshCompletedWithAnimated:(BOOL)animated;
+
+#pragma mark -
+- (void)load;
+- (void)loadCompletedWithAnimated:(BOOL)animated;
 
 #pragma mark - Load More
 - (void)loadMore;
-- (void)loadMoreCompleted;
+- (void)loadMoreCompletedWithAnimated:(BOOL)animated;
 
-- (void)hideLoadMoreView:(BOOL)animated;
-- (void)showLoadMoreView:(BOOL)animated;
 @end

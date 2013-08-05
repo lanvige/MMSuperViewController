@@ -174,11 +174,10 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     self.dragging = NO;
-	if ((self.listType == MMListRefreshAndLoadMore || self.listType == MMListRefreshOnly) &&
-        scrollView.contentOffset.y <= - 65.0f &&
-        !self.isRefreshing) {
+	if ((self.listType == MMListRefreshAndLoadMore || self.listType == MMListRefreshOnly)
+        && scrollView.contentOffset.y <= - 65.0f
+        && !self.isRefreshing) {
         [self refresh];
-        
 		[self setState:MMRefreshLoading];
         
         [UIView animateWithDuration:.2f
@@ -187,7 +186,12 @@
                          }];
 	}
     
-	if (self.listType != MMListRefreshOnly && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height - 5) && !self.isLoadingMore && !self.isAllLoadFinished) {
+	if (self.listType != MMListRefreshOnly
+        && !self.empty
+        && scrollView.contentOffset.y >= 0
+        && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height - 5)
+        && !self.isLoadingMore
+        && !self.isAllLoadFinished) {
         [self loadMore];
 		[self setState:MMLoadMoreLoading];
 	}

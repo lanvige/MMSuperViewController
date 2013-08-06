@@ -299,6 +299,11 @@
     return;
 }
 
+- (void)refreshCompleted
+{
+    [self refreshCompletedWithAnimated:NO];
+}
+
 - (void)refreshCompletedWithAnimated:(BOOL)animated
 {
     self.refreshing = NO;
@@ -314,6 +319,7 @@
     [self updatePlaceholderViews:animated];
 }
 
+
 #pragma mark -
 #pragma mark Load
 
@@ -323,6 +329,11 @@
     [self setState:MMRefreshLoading];
     
     return;
+}
+
+- (void)loadCompleted
+{
+    [self loadCompletedWithAnimated:NO];
 }
 
 - (void)loadCompletedWithAnimated:(BOOL)animated
@@ -344,6 +355,11 @@
     self.loadingMore = YES;
     
     return;
+}
+
+- (void)loadMoreCompleted
+{
+    [self loadMoreCompletedWithAnimated:YES];
 }
 
 - (void)loadMoreCompletedWithAnimated:(BOOL)animated

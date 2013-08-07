@@ -25,8 +25,8 @@ typedef enum{
     >
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
-@property (nonatomic, strong) MMRefreshDefaultView *refreshHeaderView;
-@property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreFooterView;
+@property (nonatomic, strong) MMRefreshDefaultView *refreshHeaderDefaultView;
+@property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreFooterDefaultView;
 @property (nonatomic, assign, getter=isAllLoadFinished) BOOL allLoadFinished;
 @property (nonatomic, assign, getter = isDragging) BOOL dragging;
 @property (nonatomic, assign, getter = isLoadingMore) BOOL loadingMore;

@@ -95,23 +95,23 @@
     return _loadMoreNullView;
 }
 
-- (void)setRefreshHeaderView:(MMRefreshDefaultView *)refreshHeaderView
+- (void)setRefreshHeaderDefaultView:(MMRefreshDefaultView *)refreshHeaderView
 {
     if (self.listType == MMListLoadMoreOnly || self.listType == MMListNone) {
         return;
     }
     
-    _refreshHeaderView = refreshHeaderView;
-    [_tableView addSubview:_refreshHeaderView];
+    _refreshHeaderDefaultView = refreshHeaderView;
+    [_tableView addSubview:_refreshHeaderDefaultView];
 }
 
-- (void)setLoadMoreFooterView:(MMLoadMoreDefaultView *)loadMoreFooterView
+- (void)setLoadMoreFooterDefaultView:(MMLoadMoreDefaultView *)loadMoreFooterView
 {
     if (self.listType == MMListRefreshOnly || self.listType == MMListNone) {
-        _loadMoreFooterView = self.loadMoreNullView;
+        _loadMoreFooterDefaultView = self.loadMoreNullView;
     } else {
-        _loadMoreFooterView = loadMoreFooterView;
-        _loadMoreFooterView.delegate = self;
+        _loadMoreFooterDefaultView = loadMoreFooterView;
+        _loadMoreFooterDefaultView.delegate = self;
     }
 }
 
@@ -211,28 +211,28 @@
 	switch (state) {
             // Refresh
         case MMRefreshPulling: {
-			[self.refreshHeaderView updateState:self.state withNewState:MMRefreshPulling];
+			[self.refreshHeaderDefaultView updateState:self.state withNewState:MMRefreshPulling];
             break;
         }
 		case MMRefreshNormal: {
-			[self.refreshHeaderView updateState:self.state withNewState:MMRefreshNormal];
+			[self.refreshHeaderDefaultView updateState:self.state withNewState:MMRefreshNormal];
             break;
         }
 		case MMRefreshLoading: {
-			[self.refreshHeaderView updateState:self.state withNewState:MMRefreshLoading];
+			[self.refreshHeaderDefaultView updateState:self.state withNewState:MMRefreshLoading];
             break;
         }
             // Load More
 		case MMLoadMoreNormal: {
-            [self.loadMoreFooterView setState:MMLoadMoreNormal];
+            [self.loadMoreFooterDefaultView setState:MMLoadMoreNormal];
 			break;
         }
 		case MMLoadMoreLoading: {
-            [self.loadMoreFooterView setState:MMLoadMoreLoading];
+            [self.loadMoreFooterDefaultView setState:MMLoadMoreLoading];
 			break;
         }
 		case MMLoadMoreFinished: {
-            [self.loadMoreFooterView setState:MMLoadMoreFinished];
+            [self.loadMoreFooterDefaultView setState:MMLoadMoreFinished];
 			break;
         }
 		default:
@@ -381,7 +381,7 @@
 
 - (void)showLoadMoreView:(BOOL)animated
 {
-    self.tableView.tableFooterView = self.loadMoreFooterView;
+    self.tableView.tableFooterView = self.loadMoreFooterDefaultView;
 }
 
 - (void)hideLoadMoreView:(BOOL)animated

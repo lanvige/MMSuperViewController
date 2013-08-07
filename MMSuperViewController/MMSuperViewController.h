@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
 @property (nonatomic, strong) UIView *placeholderView;
-@property (nonatomic, strong) UIView *loadingDefaultView;
+@property (nonatomic, strong) UIView *loadingView;
 
 - (NSPredicate *)predicate;
 

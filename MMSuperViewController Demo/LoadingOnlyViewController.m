@@ -27,7 +27,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
-        self.loadingDefaultView = [[MMLoadingDefaultView alloc] initWithFrame:self.view.bounds];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:self.view.bounds];
     }
     
     return self;
@@ -37,8 +37,8 @@
 {
     [super loadView];
     
-    self.refreshHeaderDefaultView = self.refreshHeaderView1;
-    self.loadMoreFooterDefaultView = self.loadMoreFooterView1;
+    self.refreshHeaderView = self.refreshHeaderView1;
+    self.loadMoreFooterView = self.loadMoreFooterView1;
 }
 
 - (void)viewDidLoad

@@ -92,17 +92,17 @@
 
 - (void)showLoadingView:(BOOL)animated
 {
-	if (!self.loadingDefaultView) {
+	if (!self.loadingView) {
 		return;
 	}
     
-	self.loadingDefaultView.alpha = 0.0f;
-	self.loadingDefaultView.frame = self.view.bounds;
-	[self.view addSubview:self.loadingDefaultView];
+	self.loadingView.alpha = 0.0f;
+	self.loadingView.frame = self.view.bounds;
+	[self.view addSubview:self.loadingView];
     
 	void (^change)(void) = ^{
-		self.loadingDefaultView.alpha = 1.0f;
-        self.loadingDefaultView.userInteractionEnabled = NO;
+		self.loadingView.alpha = 1.0f;
+        self.loadingView.userInteractionEnabled = NO;
 	};
     
     
@@ -115,17 +115,17 @@
 
 - (void)hideLoadingView:(BOOL)animated
 {
-	if (!self.loadingDefaultView || !self.loadingDefaultView.superview) {
+	if (!self.loadingView || !self.loadingView.superview) {
 		return;
 	}
     
 	void (^change)(void) = ^{
-		self.loadingDefaultView.alpha = 0.0f;
-        self.loadingDefaultView.userInteractionEnabled = YES;
+		self.loadingView.alpha = 0.0f;
+        self.loadingView.userInteractionEnabled = YES;
 	};
 	
 	void (^completion)(BOOL finished) = ^(BOOL finished) {
-		[self.loadingDefaultView removeFromSuperview];
+		[self.loadingView removeFromSuperview];
 	};
 	
 	if (animated) {

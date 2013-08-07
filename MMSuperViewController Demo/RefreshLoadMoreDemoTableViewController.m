@@ -26,7 +26,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
-        self.loadingDefaultView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
         
         
         self.listData = @[@1, @2, @3, @4, @5, @6, @7, @8, @2, @3, @4, @45, @2, @2];
@@ -39,8 +39,8 @@
 {
     [super loadView];
     
-    self.refreshHeaderDefaultView = self.refreshHeaderView1;
-    self.loadMoreFooterDefaultView = self.loadMoreFooterView1;
+    self.refreshHeaderView = self.refreshHeaderView1;
+    self.loadMoreFooterView = self.loadMoreFooterView1;
     [self.view addSubview:self.tableView];
 }
 

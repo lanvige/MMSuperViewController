@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMListLoadState.h"
+#import "MMViewLoadState.h"
 #import "UIBarButtonItem+MMListViewController.h"
 
 @protocol LoadMoreTableFooterDelegate;
@@ -17,7 +17,7 @@
 
 @property (nonatomic, weak) id<LoadMoreTableFooterDelegate> delegate;
 
-- (void)setState:(MMListLoadState)state;
+- (void)setState:(MMViewLoadState)state;
 
 @end
 

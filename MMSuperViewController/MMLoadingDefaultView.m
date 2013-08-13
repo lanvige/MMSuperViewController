@@ -24,7 +24,7 @@ static CGFloat indicatorRightMargin = 8.0f;
 {
 	if ((self = [super initWithFrame:frame])) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        self.alpha = 0.f;
+        self.alpha = 1.f;
         self.backgroundColor = [UIColor whiteColor];
         self.userInteractionEnabled = NO;
         self.contentMode = UIViewContentModeRedraw;

@@ -206,7 +206,7 @@
 #pragma mark -
 #pragma mark Setters
 
-- (void)setState:(MMListLoadState)state
+- (void)setState:(MMViewLoadState)state
 {
 	switch (state) {
             // Refresh
@@ -231,8 +231,8 @@
             [self.loadMoreFooterView setState:MMLoadMoreLoading];
 			break;
         }
-		case MMLoadMoreFinished: {
-            [self.loadMoreFooterView setState:MMLoadMoreFinished];
+		case MMLoadMoreCompleted: {
+            [self.loadMoreFooterView setState:MMLoadMoreCompleted];
 			break;
         }
 		default:
@@ -250,10 +250,15 @@
 		// Show the loading view and hide the no content view
 		[self hidePlaceholderView:animated];
         
+        // if you want show loading view while refreshing.
+        // if (self.empty) {
+        //     [self showLoadingView:animated];
+        // }
+	} else if (self.isLoading) {
         if (self.empty) {
             [self showLoadingView:animated];
         }
-	} else if (self.empty){
+    } else if (self.empty){
 		// Show the no content view and hide the loading view
 		[self hideLoadingView:animated];
         [self hideLoadMoreView:animated];
@@ -262,8 +267,7 @@
         [self hideLoadingView:animated];
 		[self hidePlaceholderView:animated];
         
-        if (self.listType == MMListRefreshAndLoadMore ||
-            self.listType == MMListLoadMoreOnly) {
+        if (self.listType != MMListRefreshOnly) {
             [self showLoadMoreView:animated];
         }
     }
@@ -325,8 +329,8 @@
 
 - (void)load
 {
-    self.refreshing = YES;
-    [self setState:MMRefreshLoading];
+    self.loading = YES;
+    [self updatePlaceholderViews:NO];
     
     return;
 }
@@ -338,8 +342,7 @@
 
 - (void)loadCompletedWithAnimated:(BOOL)animated
 {
-    self.refreshing = NO;
-    [self setState:MMRefreshNormal];
+    self.loading = NO;
     
     [self updatePlaceholderViews:animated];
 }
@@ -367,7 +370,7 @@
     self.loadingMore = NO;
     // 判断是否全部加载完成。
     if (self.isAllLoadFinished) {
-        [self setState:MMLoadMoreFinished];
+        [self setState:MMLoadMoreCompleted];
     } else {
         [self setState:MMLoadMoreNormal];
     }

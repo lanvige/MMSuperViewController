@@ -62,7 +62,7 @@
 #pragma mark -
 #pragma mark Intranal methods
 
-- (void)setState:(MMListLoadState)state
+- (void)setState:(MMViewLoadState)state
 {
 	switch (state) {
 		case MMLoadMoreNormal: {
@@ -81,7 +81,7 @@
 			[_activityView startAnimating];
 			break;
         }
-		case MMLoadMoreFinished: {
+		case MMLoadMoreCompleted: {
             [self removeTarget:self
                         action:@selector(loadMoreAction:)
               forControlEvents:UIControlEventTouchUpInside];

@@ -10,7 +10,10 @@ typedef enum{
     MMRefreshNormal = 0,
 	MMRefreshPulling,
 	MMRefreshLoading,
+    MMRefreshCompleted,
+    MMLoading,
+    MMLoadCompleted,
     MMLoadMoreNormal,
     MMLoadMoreLoading,
-    MMLoadMoreFinished
-} MMListLoadState;
+    MMLoadMoreCompleted
+} MMViewLoadState;

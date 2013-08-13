@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "MMListLoadState.h"
+#import "MMViewLoadState.h"
 
 @protocol MMRefreshHeaderDelegate;
 
@@ -20,6 +20,6 @@
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 - (void)updateLastUpdatedDate;
-- (void)updateState:(MMListLoadState)currentState withNewState:(MMListLoadState)newState;
+- (void)updateState:(MMViewLoadState)currentState withNewState:(MMViewLoadState)newState;
 
 @end

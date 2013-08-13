@@ -15,7 +15,7 @@ typedef enum{
 
 #import "MMSuperViewController.h"
 #import "MMRefreshDefaultView.h"
-#import "MMListLoadState.h"
+#import "MMViewLoadState.h"
 #import "MMLoadMoreDefaultView.h"
 
 @interface MMSuperListViewController : MMSuperViewController <
@@ -27,26 +27,28 @@ typedef enum{
 @property (nonatomic, strong, readonly) UITableView *tableView;
 @property (nonatomic, strong) MMRefreshDefaultView *refreshHeaderView;
 @property (nonatomic, strong) MMLoadMoreDefaultView *loadMoreFooterView;
-@property (nonatomic, assign, getter=isAllLoadFinished) BOOL allLoadFinished;
-@property (nonatomic, assign, getter = isDragging) BOOL dragging;
-@property (nonatomic, assign, getter = isLoadingMore) BOOL loadingMore;
-@property (nonatomic, assign) MMListLoadState state;
 
+@property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
+@property (nonatomic, assign, getter=isAllLoadFinished) BOOL allLoadFinished;
+@property (nonatomic, assign, getter=isDragging) BOOL dragging;
+@property (nonatomic, assign, getter=isLoadingMore) BOOL loadingMore;
+@property (nonatomic, assign) MMViewLoadState state;
 
 - (id)initWithListType:(MMListTableType)listType;
 
-#pragma mark - PullToRefresh
+#pragma mark -
+#pragma mark Data Operations
+#pragma mark PullToRefresh
+
 - (void)refresh;
 - (void)forceRefresh;
 - (void)refreshCompleted;
 - (void)refreshCompletedWithAnimated:(BOOL)animated;
 
 #pragma mark -
-- (void)load;
-- (void)loadCompleted;
-- (void)loadCompletedWithAnimated:(BOOL)animated;
+#pragma mark Data Operations
+#pragma mark Load More
 
-#pragma mark - Load More
 - (void)loadMore;
 - (void)loadMoreCompleted;
 - (void)loadMoreCompletedWithAnimated:(BOOL)animated;

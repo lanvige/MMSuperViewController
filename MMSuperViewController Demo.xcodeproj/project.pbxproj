@@ -57,7 +57,7 @@
 		3843A6CB179C2AA000D3E3FB /* MainDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainDemoViewController.m; sourceTree = "<group>"; };
 		3843A6D6179C2B0D00D3E3FB /* MMListEmptyDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListEmptyDefaultView.h; sourceTree = "<group>"; };
 		3843A6D7179C2B0D00D3E3FB /* MMListEmptyDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListEmptyDefaultView.m; sourceTree = "<group>"; };
-		3843A6D8179C2B0D00D3E3FB /* MMListLoadState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListLoadState.h; sourceTree = "<group>"; };
+		3843A6D8179C2B0D00D3E3FB /* MMViewLoadState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewLoadState.h; sourceTree = "<group>"; };
 		3843A6D9179C2B0D00D3E3FB /* MMSuperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSuperListViewController.h; sourceTree = "<group>"; };
 		3843A6DA179C2B0D00D3E3FB /* MMSuperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuperListViewController.m; sourceTree = "<group>"; };
 		3843A6DB179C2B0D00D3E3FB /* MMLoadingDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoadingDefaultView.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				3843A6F4179C2B5000D3E3FB /* Category */,
 				3843A6F3179C2B3500D3E3FB /* Default Views */,
 				3843A6F2179C2B1300D3E3FB /* Placeholder */,
-				3843A6D8179C2B0D00D3E3FB /* MMListLoadState.h */,
+				3843A6D8179C2B0D00D3E3FB /* MMViewLoadState.h */,
 				3843A6D9179C2B0D00D3E3FB /* MMSuperListViewController.h */,
 				3843A6DA179C2B0D00D3E3FB /* MMSuperListViewController.m */,
 				3843A6E5179C2B0D00D3E3FB /* MMSuperViewController.h */,

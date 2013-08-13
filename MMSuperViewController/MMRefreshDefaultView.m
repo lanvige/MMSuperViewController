@@ -125,7 +125,7 @@
 
 
 
-- (void)updateState:(MMListLoadState)currentState withNewState:(MMListLoadState)newState
+- (void)updateState:(MMViewLoadState)currentState withNewState:(MMViewLoadState)newState
 {
 	switch (newState) {
         case MMRefreshPulling: {

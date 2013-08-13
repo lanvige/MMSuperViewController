@@ -46,41 +46,51 @@
 }
 
 #pragma mark -
-#pragma mark Placeholders
-
-- (void)setRefreshing:(BOOL)refreshing animated:(BOOL)animated
-{
-	_refreshing = refreshing;
-    
-	[self updatePlaceholderViews:animated];
-}
-
-- (void)setRefreshing:(BOOL)refreshing
-{
-	[self setRefreshing:refreshing animated:YES];
-}
-
+#pragma mark Setters
 
 - (BOOL)empty
 {
-	// return self.fetchedResultsController.fetchedObjects.count > 0;
     return YES;
 }
 
+#pragma mark -
+#pragma mark Load
+
+- (void)load
+{
+    self.loading = YES;
+    [self updatePlaceholderViews:NO];
+    
+    return;
+}
+
+- (void)loadCompleted
+{
+    [self loadCompletedWithAnimated:NO];
+}
+
+- (void)loadCompletedWithAnimated:(BOOL)animated
+{
+    self.loading = NO;
+    
+    [self updatePlaceholderViews:animated];
+}
+
+#pragma mark -
 
 - (void)updatePlaceholderViews:(BOOL)animated
 {
 	animated = NO;
     
 	// There is no content to be displayed.
-	if ([self isRefreshing]) {
+	if (self.isLoading) {
 		// Show the loading view and hide the no content view
 		[self hidePlaceholderView:animated];
         
-        if ([self empty]) {
+        if (self.empty) {
             [self showLoadingView:animated];
         }
-	} else if ([self empty]){
+	} else if (self.empty){
 		// Show the no content view and hide the loading view
 		[self hideLoadingView:animated];
 		[self showPlaceholderView:animated];

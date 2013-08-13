@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMViewLoadState.h"
 
 @interface MMSuperViewController : UIViewController
 
-@property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
+@property (nonatomic, assign, getter=isLoading) BOOL loading;
 @property (nonatomic, strong) UIView *placeholderView;
 @property (nonatomic, strong) UIView *loadingView;
 
@@ -22,5 +23,12 @@
 - (void)hideLoadingView:(BOOL)animated;
 - (void)showPlaceholderView:(BOOL)animated;
 - (void)hidePlaceholderView:(BOOL)animated;
+
+#pragma mark -
+#pragma mark Data Operations
+
+- (void)load;
+- (void)loadCompleted;
+- (void)loadCompletedWithAnimated:(BOOL)animated;
 
 @end

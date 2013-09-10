@@ -26,7 +26,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.placeholderView = [[MMListEmptyDefaultView alloc] initWithFrame:CGRectZero];
-        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[MMLoadingDefaultView alloc] initWithFrame:self.view.bounds];
         
         
         self.listData = @[];
@@ -49,6 +49,8 @@
     [super viewDidLoad];
     
     self.title = @"Empty list";
+    
+    [self loadData];
 }
 
 
@@ -60,27 +62,19 @@
     return self.listData.count == 0;
 }
 
-- (IBAction)refreshData:(id)sender
-{
-    [self forceRefresh];
-}
 
-- (void)refresh
+- (void)loadData
 {
-    [super refresh];
-    self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exActivityIndicatorButtonItem];
+    [super load];
     
-    [self performSelector:@selector(refreshCompleted)
+    [self performSelector:@selector(loadCompleted)
                withObject:nil
-               afterDelay:1.0];
-    return;
+               afterDelay:3.0];
 }
 
-- (void)refreshCompleted
+- (void)loadCompleted
 {
-    [super refreshCompletedWithAnimated:NO];
-    
-    self.tabBarController.navigationItem.rightBarButtonItem = [UIBarButtonItem exRefreshButtonItemWithTarget:self action:@selector(refreshData:)];
+    [super loadCompleted];
 }
 
 
@@ -93,6 +87,18 @@
                withObject:nil
                afterDelay:1.0];
     return;
+}
+
+- (void)refresh
+{
+    [self performSelector:@selector(refreshCompleted)
+               withObject:nil
+               afterDelay:3.0];
+}
+
+- (void)refreshCompleted
+{
+    [super refreshCompleted];
 }
 
 #pragma mark -

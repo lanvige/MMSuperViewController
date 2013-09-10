@@ -393,6 +393,54 @@
 }
 
 
+- (void)showPlaceholderView:(BOOL)animated
+{
+	if (!self.placeholderView || self.placeholderView.superview) {
+		return;
+	}
+	
+	self.placeholderView.alpha = 0.0f;
+	self.placeholderView.frame = self.view.bounds;
+	[self.tableView addSubview:self.placeholderView];
+	
+	void (^change)(void) = ^{
+		self.placeholderView.alpha = 1.0f;
+	};
+	
+	if (animated) {
+		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:change completion:nil];
+	} else {
+		change();
+	}
+}
+
+
+- (void)hidePlaceholderView:(BOOL)animated
+{
+	if (!self.placeholderView || !self.placeholderView.superview) {
+		return;
+	}
+    
+	void (^change)(void) = ^{
+		self.placeholderView.alpha = 0.0f;
+	};
+	
+	void (^completion)(BOOL finished) = ^(BOOL finished) {
+		[self.placeholderView removeFromSuperview];
+	};
+	
+	if (animated) {
+		[UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:change
+                         completion:completion];
+	} else {
+		change();
+		completion(YES);
+	}
+}
+
 #pragma mark -
 #pragma mark Momery Management
 

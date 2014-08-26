@@ -7,7 +7,7 @@
 //
 
 #define FLIP_ANIMATION_DURATION 0.18f
-#define TMMT_COLOR [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0]
+#define TMMT_COLOR [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0]
 
 #import "MMRefreshDefaultView.h"
 

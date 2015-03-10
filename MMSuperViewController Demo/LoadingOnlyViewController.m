@@ -47,6 +47,8 @@
     
     self.listData = @[];
     self.title = @"Refresh&More";
+    self.wantsFullScreenLayout = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self load];
 }

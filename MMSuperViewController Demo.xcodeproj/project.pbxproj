@@ -27,6 +27,7 @@
 		3843A6F0179C2B0D00D3E3FB /* MMSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3843A6E6179C2B0D00D3E3FB /* MMSuperViewController.m */; };
 		3843A6F1179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3843A6E8179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m */; };
 		3843A6F6179C2B7500D3E3FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3843A6F5179C2B7500D3E3FB /* QuartzCore.framework */; };
+		38468AEA1AAEE4EA001DD203 /* LoadControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38468AE91AAEE4EA001DD203 /* LoadControllerViewController.m */; };
 		384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */; };
 		384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */; };
 		3890F54E17AFABBD0013530C /* LoadingOnlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890F54D17AFABBD0013530C /* LoadingOnlyViewController.m */; };
@@ -75,6 +76,8 @@
 		3843A6E7179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+MMListViewController.h"; sourceTree = "<group>"; };
 		3843A6E8179C2B0D00D3E3FB /* UIBarButtonItem+MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+MMListViewController.m"; sourceTree = "<group>"; };
 		3843A6F5179C2B7500D3E3FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		38468AE81AAEE4EA001DD203 /* LoadControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadControllerViewController.h; sourceTree = "<group>"; };
+		38468AE91AAEE4EA001DD203 /* LoadControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadControllerViewController.m; sourceTree = "<group>"; };
 		384C0FCA179F88FA008DBB39 /* MMRefreshLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRefreshLogoView.h; sourceTree = "<group>"; };
 		384C0FCB179F88FA008DBB39 /* MMRefreshLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRefreshLogoView.m; sourceTree = "<group>"; };
 		384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLogoDemoTableViewController.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				38CFFB9B179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m */,
 				384C0FCD179F8978008DBB39 /* RefreshLogoDemoTableViewController.h */,
 				384C0FCE179F8978008DBB39 /* RefreshLogoDemoTableViewController.m */,
+				38468AE81AAEE4EA001DD203 /* LoadControllerViewController.h */,
+				38468AE91AAEE4EA001DD203 /* LoadControllerViewController.m */,
 			);
 			name = "Demo Controllers";
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				384C0FCF179F8978008DBB39 /* RefreshLogoDemoTableViewController.m in Sources */,
 				3892E85C179CDDF500887E60 /* LoadMoreDemoTableViewController.m in Sources */,
 				3890F54E17AFABBD0013530C /* LoadingOnlyViewController.m in Sources */,
+				38468AEA1AAEE4EA001DD203 /* LoadControllerViewController.m in Sources */,
 				38CFFB9C179C36820011BCEF /* RefreshLoadMoreDemoTableViewController.m in Sources */,
 				3892E859179CD47500887E60 /* RefreshDemoTableViewController.m in Sources */,
 				384C0FCC179F88FA008DBB39 /* MMRefreshLogoView.m in Sources */,

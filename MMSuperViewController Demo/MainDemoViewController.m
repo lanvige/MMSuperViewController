@@ -13,6 +13,7 @@
 #import "RefreshLogoDemoTableViewController.h"
 #import "NullDemoViewController.h"
 #import "LoadingOnlyViewController.h"
+#import "LoadControllerViewController.h"
 
 
 @interface MainDemoViewController ()
@@ -32,13 +33,14 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    self.wantsFullScreenLayout = YES;
 }
 
 #pragma mark -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,6 +79,11 @@
         }
         case 5: {
             cell.textLabel.text = @"Loading";
+            break;
+        }
+        case 6: {
+            cell.textLabel.text = @"View without List";
+            break;
         }
         default:
             break;
@@ -122,6 +129,11 @@
         case 5:{
             self.listViewController = [[LoadingOnlyViewController alloc] init];
             [self.navigationController pushViewController:self.listViewController animated:YES];
+            break;
+        }
+        case 6:{
+            MMSuperViewController *mmvc = [[LoadControllerViewController alloc] init];
+            [self.navigationController pushViewController:mmvc animated:YES];
             break;
         }
         default:

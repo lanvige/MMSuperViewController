@@ -51,6 +51,9 @@
     self.title = @"Empty list";
     
     [self loadData];
+    
+    self.wantsFullScreenLayout = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 

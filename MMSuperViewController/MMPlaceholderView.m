@@ -40,7 +40,7 @@
     if (!_arrowLabel) {
         _arrowLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		_arrowLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-		_arrowLabel.textAlignment = UITextAlignmentCenter;
+		_arrowLabel.textAlignment = NSTextAlignmentCenter;
 		_arrowLabel.backgroundColor = [UIColor clearColor];
 		_arrowLabel.font = [UIFont systemFontOfSize:19.0f];
 		_arrowLabel.textColor = [UIColor colorWithWhite:0.294f alpha:0.45f];
@@ -66,7 +66,7 @@
 		_titleLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
 		_titleLabel.backgroundColor = [UIColor clearColor];
 		_titleLabel.numberOfLines = 2;
-		_titleLabel.textAlignment = UITextAlignmentCenter;
+		_titleLabel.textAlignment = NSTextAlignmentCenter;
 		_titleLabel.textColor = [UIColor colorWithRed:0.702f green:0.694f blue:0.686f alpha:1.0f];
 		_titleLabel.font = [UIFont systemFontOfSize:16.0f];
 		_titleLabel.shadowColor = [UIColor whiteColor];

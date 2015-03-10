@@ -48,6 +48,9 @@
     [super viewDidLoad];
     
     self.title = @"Refresh&More";
+    
+    self.wantsFullScreenLayout = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 
